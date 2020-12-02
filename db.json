@@ -28,5 +28,12 @@
       "id": 1
     }
   ],
-  "commentaires": []
+  "commentaires": [
+    {
+      "evaluation": 3,
+      "id": 1,
+      "message": "J'ai aimé ce jeu mais pas trop",
+      "jeux_id": "Fifa 2021"
+    }
+  ]
 }

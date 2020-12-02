@@ -16,6 +16,7 @@ import { LaisserCommentaireComponent } from './laisser-commentaire/laisser-comme
 import { Ng5SliderModule } from 'ng5-slider';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AddJeuComponent } from './add-jeu/add-jeu.component';
+import { UpdateCommentaireComponent } from './update-commentaire/update-commentaire.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AddJeuComponent } from './add-jeu/add-jeu.component';
     ListCommentairesComponent,
     LaisserCommentaireComponent,
     AddJeuComponent,
+    UpdateCommentaireComponent,
   ],
   imports: [
     BrowserModule,
