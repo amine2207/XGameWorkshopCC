@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Un nouveau Genre</title>
+</head>
+
+<body>
+    <app-menu></app-menu>
+    <form [formGroup]="jeux_group" style="width: 1000px; padding-left:400px">
+        <legend>
+            Update Jeu Form
+        </legend>
+
+        <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Id</label>
+            <input type="text" class="form-control form-control-lg" formControlName="id" [(ngModel)]="jeux.id"
+                name="id" />
+        </div>
+        <div *ngIf="id.invalid && id.touched">
+            Identifiant Obligatoire
+        </div>
+        <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Nom</label>
+            <input type="text" class="form-control form-control-lg" formControlName="nom" [(ngModel)]="jeux.nom"
+                name="nom" />
+        </div>
+        <div *ngIf="nom.invalid && nom.touched">
+            Nom obligatoire
+        </div>
+        <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Description</label>
+            <input type="text" class="form-control form-control-lg" formControlName="description" name="description"
+                [(ngModel)]="jeux.description">
+
+        </div>
+        <div *ngIf="description.invalid && description.touched && description.errors?.minlength">
+            La description contient au moins 5 caractéres!
+        </div>
+        <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Prix</label>
+
+            <input type="text" class="form-control form-control-lg" formControlName="prix" name="prix"
+                [(ngModel)]="jeux.prix" />
+        </div>
+        <div *ngIf="prix.invalid && prix.touched">
+            Prix obligatoire
+        </div>
+
+        <label class="col-form-label col-form-label-lg" for="inputLarge">Type du Jeu:</label>
+        <select id="genre_id"  name="genre_id" [(ngModel)]="jeux.genre_id" 
+                formControlName="genre_id" class="form-control">
+            <option value="" disabled>Sélectionnez votre Genre</option>
+            <option *ngFor="let item of listgenres" [value]="item.genre">
+                {{item.genre}}
+            </option>
+        </select>
+        <br>
+        <button (click)="update_jeu()" class="btn btn-outline-primary">Sauvegarder les modifications</button>
+    </form>
+</body>
+
+</html>

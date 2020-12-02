@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import { UpdateGenreComponent } from './update-genre/update-genre.component';
+import { JeuxComponent } from './jeux/jeux.component';
+import { UpdateJeuComponent } from './update-jeu/update-jeu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { UpdateGenreComponent } from './update-genre/update-genre.component';
     MenuComponent,
     GenreComponent,
     AddGenreComponent,
-    UpdateGenreComponent
+    UpdateGenreComponent,
+    JeuxComponent,
+    UpdateJeuComponent
   ],
   imports: [
     BrowserModule,
