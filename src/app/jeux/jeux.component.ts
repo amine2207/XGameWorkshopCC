@@ -2,7 +2,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Genre } from '../model/genre';
+import { Genre } from '../model/Genre';
 import { Jeux } from '../model/jeux';
 import { GenreService } from '../shared/genre.service';
 import { JeuxService } from '../shared/jeux.service';

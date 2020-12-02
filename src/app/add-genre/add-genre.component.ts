@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Genre } from '../model/genre';
+import { Genre } from '../model/Genre';
+
 import { GenreService } from '../shared/genre.service';
 @Component({
   selector: 'app-add-genre',

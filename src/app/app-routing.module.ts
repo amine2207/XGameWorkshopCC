@@ -6,7 +6,6 @@ import { JeuxComponent } from './jeux/jeux.component';
 import { LaisserCommentaireComponent } from './laisser-commentaire/laisser-commentaire.component';
 import { ListCommentairesComponent } from './list-commentaires/list-commentaires.component';
 import { MenuComponent } from './menu/menu.component';
-import { UpdateCommentaireComponent } from './update-commentaire/update-commentaire.component';
 import { UpdateGenreComponent } from './update-genre/update-genre.component';
 import { UpdateJeuComponent } from './update-jeu/update-jeu.component';
 
@@ -23,7 +22,7 @@ const routes: Routes = [
   { path: 'laisser-commentaire', component: LaisserCommentaireComponent },
   { path: 'list_comms', component: ListCommentairesComponent },
   { path: 'deletecomm/:id', component: ListCommentairesComponent },
-  { path : 'update_comm/:id',component:UpdateCommentaireComponent}
+
 ];
 
 @NgModule({

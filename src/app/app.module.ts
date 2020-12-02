@@ -15,7 +15,7 @@ import { ListCommentairesComponent } from './list-commentaires/list-commentaires
 import { LaisserCommentaireComponent } from './laisser-commentaire/laisser-commentaire.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { UpdateCommentaireComponent } from './update-commentaire/update-commentaire.component';
+import { AddJeuComponent } from './add-jeu/add-jeu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { UpdateCommentaireComponent } from './update-commentaire/update-commenta
     UpdateJeuComponent,
     ListCommentairesComponent,
     LaisserCommentaireComponent,
-    UpdateCommentaireComponent
+    AddJeuComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +37,7 @@ import { UpdateCommentaireComponent } from './update-commentaire/update-commenta
     ReactiveFormsModule,
     HttpClientModule,
     Ng5SliderModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
