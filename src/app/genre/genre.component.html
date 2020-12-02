@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre</title>
+</head>
+<body>
+    <app-menu ></app-menu>
+    <br>
+<h1 class="liste_title">Liste des Genres</h1>
+<div class="container_right">
+   <a [routerLink]="[ '/add-genre' ]">
+    <button  class="btn btn-primary">Ajouter Un nouveau Gender</button>
+   </a> 
+</div>
+<br>
+<br>
+<div class ="container_g">
+    
+    <div class="card" *ngFor="let item of listgenres" >
+         
+      <img [src]="sanitizeImageUrl(item.image)" width="200px">
+        <div class="container">
+          <h4><b>{{item.genre}}</b></h4> 
+          <p>{{item.description}}</p> 
+        </div>
+        <hr>
+     <div class="container_b">
+        
+            <a class="btn btn-outline-warning"  [routerLink]="[ '/updategenre/', item.id ]">Modifier</a>
+       
+          <div style="margin-left: 100px;"></div>
+        <button class="btn btn-outline-danger" (click)="delete(item.id)" [routerLink]="['/delete_genre/',item.id]">Supprimer</button>
+     </div>
+     <br>
+        
+    
+
+</div>
+</div>
+
+</body>
+</html>
