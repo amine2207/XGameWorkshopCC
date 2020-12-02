@@ -1,65 +1,75 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter Un nouveau Genre</title>
 </head>
+
 <body>
     <app-menu></app-menu>
-<br>
+    <br>
 
-<form style="width: 1000px; padding-left:400px"  #form="ngForm">
-    <h1>Ajouter Un nouveau Genre</h1>
-<hr>
+    <form style="width: 1000px; padding-left:400px" #form="ngForm">
+        <legend>Genre form</legend>
+
         <div class="form-group">
             <label class="col-form-label col-form-label-lg" for="inputLarge">Genre:</label>
-            <input class="form-control form-control-lg" 
-                    type="text" 
-                    placeholder="Mettez içi le nom du genre ..." 
-                    id="inputLarge" 
-                    name="genre" 
-                    [(ngModel)]="g.genre" #genre="ngModel" 
-                    required >
+            <input class="form-control form-control-lg" type="text"
+                placeholder="exemple (sport, aventure , guerre , ...) ..." id="inputLarge" name="genre"
+                [(ngModel)]="g.genre" #genre="ngModel" required>
             <div *ngIf="genre.invalid && genre.touched">
-                Ce champ est obligatoire
+                <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto">Attention </strong>
+                        <small><span class="badge badge-warning">Warning</span></small>
+                    </div>
+                    <div class="toast-body">
+                        Ce champ est obligatoire
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="form-group">
             <label class="col-form-label col-form-label-lg" for="inputLarge">Description:</label>
-            <input class="form-control form-control-lg" 
-                minlength="4" 
-                type="text" 
-                placeholder="Ajouter une description pour votre Genre" 
-                id="inputLarge" 
-                name="description" 
-                [(ngModel)]="g.description" #description="ngModel" 
-                optional>
+            <textarea class="form-control form-control-lg" rows="3" cols="20" minlength="4" type="text"
+                placeholder="Ajouter une description pour votre Genre" id="inputLarge" name="description"
+                [(ngModel)]="g.description" #description="ngModel" optional></textarea>
             <div *ngIf=" description.errors?.minlength">
-                Ce champ contient au moins 4 caractéres
+
+                <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto">Attention </strong>
+                        <small><span class="badge badge-warning">Warning</span></small>
+                    </div>
+                    <div class="toast-body">
+                        Ce champ contient au moins 4 caractéres
+                    </div>
+
+
+                </div>
             </div>
         </div>
 
         <div class="form-group">
             <label class="col-form-label col-form-label-lg" for="inputLarge">Choisir Image:</label>
             <div class="input-group mb-3">
-              <div class="custom-file">
-                <input 
-                    type="file" 
-                    (change)="onSelectFile($event)"
-                    class="custom-file-input" 
-                    id="inputGroupFile02" 
-                    name="image" 
-                    [(ngModel)]="g.image" #image="ngModel" required>
-                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
-                
- 
-            </div>
+                <div class="custom-file">
+                    <input type="file" (change)="onSelectFile($event)" class="custom-file-input" id="inputGroupFile02"
+                        name="image" [(ngModel)]="g.image" #image="ngModel" required>
+                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+
+
+                </div>
             </div>
             <img [src]="img_url" width="200px">
 
-          </div>
+        </div>
 
-        <button  [disabled]="form.invalid" (click)="save()" type="button" class="btn btn-outline-info btn-lg btn-block">Sauvegarder</button>
-</form>
+        <button [disabled]="form.invalid" (click)="save()" type="button"
+            class="btn btn-outline-info btn-lg btn-block">Sauvegarder</button>
+    </form>
 </body>
+
 </html>

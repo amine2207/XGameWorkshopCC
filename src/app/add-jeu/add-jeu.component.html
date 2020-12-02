@@ -10,34 +10,61 @@
 <body>
     <form [formGroup]="jeux_group" style="width: 1000px; padding-left:400px">
         <legend>
-            Jeu Form
+            Add Jeu Form
         </legend>
-
         <div class="form-group">
             <label class="col-form-label col-form-label-lg" for="inputLarge">Nom</label>
-            <input type="text" class="form-control form-control-lg" formControlName="nom" [(ngModel)]="jeux.nom"
+            <input placeholder="exemple ( FIFA , PES , Watch Dog , ... )" type="text" class="form-control form-control-lg" formControlName="nom" [(ngModel)]="jeux.nom"
                 name="nom" />
         </div>
         <div *ngIf="nom.invalid && nom.touched">
-            Nom obligatoire
+            <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <strong class="mr-auto">Attention  </strong>
+                  <small><span class="badge badge-warning">Warning</span></small>
+                </div>
+                <div class="toast-body">
+                    Ce champ est obligatoire
+                </div>
+            </div>
+              
         </div>
         <div class="form-group">
-            <label class="col-form-label col-form-label-lg" for="inputLarge">Description</label>
-            <input type="text" class="form-control form-control-lg" formControlName="description" name="description"
-                [(ngModel)]="jeux.description">
+        <label class="col-form-label col-form-label-lg" for="inputLarge">Description</label>
+        <textarea rows="3" cols="20" placeholder="mettez votre description ..." type="text" class="form-control form-control-lg" formControlName="description" name="description"
+                [(ngModel)]="jeux.description"></textarea>
 
         </div>
         <div *ngIf="description.invalid && description.touched && description.errors?.minlength">
-            La description contient au moins 5 caractéres!
+            
+            <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <strong class="mr-auto">Attention  </strong>
+                  <small><span class="badge badge-warning">Warning</span></small>
+                </div>
+                <div class="toast-body">
+                    Ce champ contient au moins 5 caractéres!
+                </div>
+            </div>
+              
         </div>
         <div class="form-group">
             <label class="col-form-label col-form-label-lg" for="inputLarge">Prix</label>
 
-            <input type="text" class="form-control form-control-lg" formControlName="prix" name="prix"
+            <input placeholder="tapez votre prix ..." type="text" class="form-control form-control-lg" formControlName="prix" name="prix"
                 [(ngModel)]="jeux.prix" />
         </div>
         <div *ngIf="prix.invalid && prix.touched">
-            Prix obligatoire
+            
+            <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <strong class="mr-auto">Attention  </strong>
+                  <small><span class="badge badge-warning">Warning</span></small>
+                </div>
+                <div class="toast-body">
+                    Ce champ est obligatoire
+                </div>
+            </div>
         </div>
 
         <label class="col-form-label col-form-label-lg" for="inputLarge">Type du Jeu:</label>
@@ -49,7 +76,7 @@
             </option>
         </select>
         <br>
-        <button (click)="add_jeu()" class="btn btn-primary">Ajouter</button>
+        <button [disabled]="jeux_group.invalid" (click)="add_jeu()" class="btn btn-outline-info btn-lg btn-block">Sauvegarder</button>
     </form>
 </body>
 

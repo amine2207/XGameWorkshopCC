@@ -8,7 +8,7 @@
 <body>
     <app-menu ></app-menu>
     <br>
-<h1 class="liste_title">Liste des Genres</h1>
+<legend class="mx-3">Liste des Genres</legend>
 <div class="container_right">
    <a [routerLink]="[ '/add-genre' ]">
     <button  class="btn btn-primary">Ajouter Un nouveau Gender</button>
@@ -34,11 +34,7 @@
         <button class="btn btn-outline-danger" (click)="delete(item.id)" [routerLink]="['/delete_genre/',item.id]">Supprimer</button>
      </div>
      <br>
-        
-    
-
 </div>
 </div>
-
 </body>
 </html>

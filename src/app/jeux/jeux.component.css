@@ -33,7 +33,10 @@
 
   .container_b
   {
-    margin-left: 30px;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
     align-self: center;
     display:flex;
     flex-wrap: wrap;

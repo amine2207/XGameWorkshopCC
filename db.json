@@ -17,23 +17,49 @@
       "genre": "Arcade",
       "description": "Arcade",
       "image": "C:\\fakepath\\157429-image2_450x450.png"
+    },
+    {
+      "id": 4,
+      "genre": "test",
+      "description": "Test",
+      "image": "C:\\fakepath\\31744-3-coder-transparent-image.png"
     }
   ],
   "Jeux": [
     {
+      "nom": "League Of Legends",
+      "description": "Dans League of Legends, le joueur contrôle un champion aux compétences uniques dont la puissance augmente au fil de la partie se battant contre une équipe de joueurs en temps réel la plupart du temps.",
+      "prix": "100.0",
+      "genre_id": "Aventure",
+      "id": 1
+    },
+    {
       "nom": "Fifa 2021",
-      "description": "Jeu de foot",
+      "description": "FIFA 21 sur PS4 est une simulation de football éditée par Electronic Arts. Comme chaque année, le jeu promet des améliorations techniques pour toujours plus de réalisme ainsi que des animations et des comportements toujours plus poussés",
       "prix": "500.0",
       "genre_id": "Sport",
-      "id": 1
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nom": "test",
+      "description": "testtttt",
+      "prix": "100",
+      "genre_id": "test"
     }
   ],
   "commentaires": [
     {
-      "evaluation": 3,
+      "evaluation": 9,
       "id": 1,
-      "message": "J'ai aimé ce jeu mais pas trop",
+      "message": "Le meilleur graphisme",
       "jeux_id": "Fifa 2021"
+    },
+    {
+      "evaluation": 10,
+      "message": "Vraiment c'est une obsession ce jeu",
+      "jeux_id": "League Of Legends",
+      "id": 2
     }
   ]
 }

@@ -9,15 +9,24 @@
 
 <body>
     <app-menu></app-menu>
-    <form #form="ngForm">
-        <h1>Ajouter Un nouveau Genre</h1>
+    <br>
+    <form #form="ngForm" class="my_form w-50">
+        <legend>Update Commentaire Form</legend>
         <hr>
         <div class="form-group">
             <label class="col-form-label col-form-label" for="inputLarge">Identifiant:</label>
             <input class="form-control form-control-lg" type="text" placeholder="Tapez votre commentaire ..."
                 id="inputLarge" name="id" [(ngModel)]="commentaire.id" #id="ngModel" required>
             <div *ngIf="id.invalid && id.touched">
-                Ce champ est obligatoire
+                <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <strong class="mr-auto">Attention  </strong>
+                      <small><span class="badge badge-warning">Warning</span></small>
+                    </div>
+                    <div class="toast-body">
+                        Ce champ est obligatoire
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -25,7 +34,15 @@
             <input class="form-control form-control-lg" type="text" placeholder="Tapez votre commentaire ..."
                 id="inputLarge" name="message" [(ngModel)]="commentaire.message" #message="ngModel" required>
             <div *ngIf="message.invalid && message.touched">
-                Ce champ est obligatoire
+                <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <strong class="mr-auto">Attention  </strong>
+                      <small><span class="badge badge-warning">Warning</span></small>
+                    </div>
+                    <div class="toast-body">
+                        Ce champ est obligatoire
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -34,12 +51,20 @@
             <ng5-slider [(value)]="value" [options]="options" name="evaluation" [(ngModel)]="commentaire.evaluation"
                 #evaluation="ngModel"></ng5-slider>
             <div *ngIf="evaluation.invalid && evaluation.touched">
-                Ce champ est obligatoire
+                <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <strong class="mr-auto">Attention  </strong>
+                      <small><span class="badge badge-warning">Warning</span></small>
+                    </div>
+                    <div class="toast-body">
+                        Ce champ est obligatoire
+                    </div>
+                </div>
             </div>
         </div>
 
 
-        <label class="col-form-label col-form-label" for="inputLarge">Type du Jeu:</label>
+        <label class="col-form-label col-form-label" for="inputLarge">Nom du Jeu:</label>
         <select id="jeux_id" name="jeux_id" [(ngModel)]="commentaire.jeux_id" #jeux_id="ngModel" class="form-control">
             <option value="" disabled>Sélectionnez votre Jeu</option>
             <option *ngFor="let item of listJeux" [value]="item.nom">
@@ -47,8 +72,8 @@
             </option>
         </select>
 
-
-        <button (click)="update()" type="submit" class="btn btn-outline-info btn-lg btn-block">Mettre à jour</button>
+<br>
+        <button (click)="update()" type="submit" class="btn btn-outline-info btn-lg btn-block">Appliquer les modifications</button>
     </form>
 </body>
 

@@ -60,22 +60,15 @@ export class JeuxComponent implements OnInit {
   });
   }
  
+  selectedJeux: Jeux;
+  select(jeux: Jeux) {
+    this.selectedJeux = jeux;
+  }
   getAll() {
     this.js.getJeu().subscribe(
     (data:Jeux[])=>{this.listjeu = data});
   }
 
-  like(): void
-  {
-    this.msg = "#1D6421";
-    this.m = "vous avez aimé ce jeu "
-  }
 
-  dislike(): void
-  {
-    this.msg = "#A93417";
-    this.m = "il semble que vous n'avez pas aimé ce jeu "
-
-  }
 
 }

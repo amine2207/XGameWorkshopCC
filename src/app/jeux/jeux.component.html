@@ -8,7 +8,7 @@
 
 <body>
     <app-menu></app-menu>
-    
+
     <br>
     <br>
     <br>
@@ -19,55 +19,35 @@
 
     <div class="container_g">
 
-        <div class="card" *ngFor="let item of listjeu | filter:term">
+        <div class="card" *ngFor="let item of listjeu" [class.selected]="item === selectedJeux" (click)="select(item)">
 
 
-            <div class="container" [style.background]="msg">
-            
-
-                <h4 ng-class="{'has-success': success ,'has-error': error}" ><b>Nom du jeu : {{item.nom}}</b></h4> 
+            <div class="container">
+                <h4 ng-class="{'has-success': success ,'has-error': error}"><b>Nom du jeu : {{item.nom}}</b></h4>
                 <p>Identifiant du jeu : {{item.id}}</p>
-                <p>Prix  jeu : {{item.prix}}</p>
+                <p>Prix jeu : {{item.prix}}</p>
                 <p>Genre du jeu : {{item.genre_id}}</p>
-                
-                <div class="alert alert-dismissible alert-info">
-               
-                    <strong>{{m}}</strong> 
-                  </div>
             </div>
             <hr>
             <div class="container_b">
-                <div style="margin-left: 15px;"></div>
+                
                 <a [routerLink]="['/deletejeu/',item.id]">
-                <button class="btn btn-outline-danger" (click)="delete(item.id)" >Supprimer</button></a>
-
-                <div style="margin-left: 15px;"></div>
+                    <button class="btn btn-outline-danger btn-lg" (click)="delete(item.id)">Supprimer</button></a>
+                <div class="mx-4"></div>
                 <a>
-                    <button [routerLink]="['/updatejeu/', item.id]" class="btn btn-outline-warning">Modifier</button>
-                </a>
-                
-                <div style="margin-left: 15px;"></div>
-
-                   <a [routerLink]="[ '/laisser-commentaire']">
-                        <button class="btn btn-outline-info">Laisser commentaire</button>
-                    </a>
-                
-                    <button [(ngModel)]="msg"  (click)="like()" class="btn btn-outline-success">Like
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                         </svg>
-                     </button>
-                     <button [(ngModel)]="msg"  (click)="dislike()" class="btn btn-outline-primary ml-1">Dislike
-                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-expressionless-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                             <path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM4.5 6a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm5 0a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm-5 4a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
-                           </svg>
-                         </button>
+                    <button [routerLink]="['/updatejeu/', item.id]" class="btn btn-outline-warning btn-lg">Modifier</button>
+                </a>    
+                <br>
+                <hr>
+ 
             </div>
             <br>
 
 
-
         </div>
+        
+        <app-input-jeux-details  [style.background]="msg"  [item]="selectedJeux"></app-input-jeux-details>
+
     </div>
 
 </body>

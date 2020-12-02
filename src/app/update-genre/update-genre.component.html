@@ -10,8 +10,9 @@
 <br>
 
 <form style="width: 1000px; padding-left:400px"  #form="ngForm" >
-    <h1>Modifier Un  Genre existant</h1>
+    <legend>Update Genre Form</legend>
 <hr>
+<label class="col-form-label col-form-label-lg" for="inputLarge">Identifiant:</label>
 <input class="form-control form-control-lg"   
     type="text" 
     placeholder="Mettez içi le nom du genre ..." 
@@ -29,7 +30,15 @@
                     [(ngModel)]="g.genre" #genre="ngModel" 
                     required >
             <div *ngIf="genre.invalid && genre.touched">
-                Ce champ est obligatoire
+                <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <strong class="mr-auto">Attention  </strong>
+                      <small><span class="badge badge-warning">Warning</span></small>
+                    </div>
+                    <div class="toast-body">
+                        Ce champ est obligatoire
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
@@ -43,7 +52,16 @@
                 [(ngModel)]="g.description" #description="ngModel" 
                 optional>
             <div *ngIf=" description.errors?.minlength">
-                Ce champ contient au moins 4 caractéres
+                
+                <div class="toast show w-50" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <strong class="mr-auto">Attention  </strong>
+                      <small><span class="badge badge-warning">Warning</span></small>
+                    </div>
+                    <div class="toast-body">
+                        Ce champ contient au moins 4 caractéres
+                    </div>
+                </div>
             </div>
         </div>
 

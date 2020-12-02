@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Commentaire } from '../model/commentaire';
+import { Jeux } from '../model/jeux';
 import { CommentsService } from '../shared/comments.service';
 @Component({
   selector: 'app-list-commentaires',
@@ -22,6 +23,8 @@ export class ListCommentairesComponent implements OnInit {
     }
     );
   }
+
+
   delete(id: number)
   {
     this.cs.deleteCOMM(id).subscribe(resultat => {
