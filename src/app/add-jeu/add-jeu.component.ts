@@ -17,6 +17,9 @@ export class AddJeuComponent implements OnInit {
   jeux: Jeux = new Jeux();
   listgenres: Genre[] = [];
   img;
+
+  img_url = "../../assets/images/";
+
   constructor(private js: JeuxService, private router: Router , private gs : GenreService) {
     this.jeux_group = new FormGroup({
     id: new FormControl('', Validators.required),
@@ -56,13 +59,17 @@ export class AddJeuComponent implements OnInit {
       });
   }
 
-  onSelectedFile(event)
+
+  onSelectFile(e)
   {
-    if (event.target.files.length > 0)
+    if (e.target.files)
     {
-      const file = event.target.files[0];
-      this.jeux_group.get('couverture').setValue(file);
+      var reader = new FileReader()
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload=(event: any)=> {
+        this.img_url = event.target.result;
       }
+    }
   }
 
   DisplayImgSubject()

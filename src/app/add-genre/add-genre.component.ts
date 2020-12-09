@@ -16,7 +16,7 @@ export class AddGenreComponent implements OnInit {
 
   url = "C:/workspace/AngularProjectCC/src/assets/images/";
   img_url = "../../assets/images/";
-  img: any;
+  img: any =  "../../assets/images/";
   listgenres: Genre[] = [];
   constructor(private genre_service: GenreService, private router: Router, private gs: GenreService) {
   
@@ -37,7 +37,8 @@ export class AddGenreComponent implements OnInit {
     
     resultat => {
         console.log("genre added");
-        
+        //this.router.serializeUrl(this.img);
+        //this.g.image = this.img;
       this.router.navigateByUrl('/genres');
     }, (err) => {
       console.log(err);

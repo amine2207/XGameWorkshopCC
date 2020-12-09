@@ -12,7 +12,7 @@ import { UpdateJeuComponent } from './update-jeu/update-jeu.component';
 
 
 const routes: Routes = [
-  { path: '', component: MenuComponent },
+  { path: '', component: ListCommentairesComponent },
   { path: 'genres', component: GenreComponent },
   { path: 'jeux', component: JeuxComponent },
   { path: 'add-genre', component: AddGenreComponent },

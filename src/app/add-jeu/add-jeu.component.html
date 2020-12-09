@@ -82,6 +82,19 @@
             </option>
         </select>
         <br>
+
+        <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Choisir Image:</label>
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="form-control form-control-lg custom-file-label" formControlName="couverture" name="couverture"
+                    [(ngModel)]="jeux.couverture" (change)="onSelectFile($event)" />
+                </div>
+            </div>
+            <img [src]="img_url" width="200px">
+
+        </div>
+
         <button  (click)="add_jeu()" class="btn btn-outline-info btn-lg btn-block">Sauvegarder</button>
     </form>
 </body>

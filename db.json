@@ -3,32 +3,20 @@
     {
       "genre": "Aventure",
       "description": "Description Aventure",
-      "image": "C:\\fakepath\\aventure.png",
+      "image": "../../assets/images/aventure.png",
       "id": 1
     },
     {
       "genre": "Sport",
       "description": "Description Sport",
-      "image": "C:\\fakepath\\sport.png",
+      "image": "../../assets/images/sport.png",
       "id": 2
     },
     {
-      "id": 3,
-      "genre": "Arcade",
-      "description": "Arcade",
-      "image": "C:\\fakepath\\157429-image2_450x450.png"
-    },
-    {
       "id": 4,
-      "genre": "test",
-      "description": "Test",
-      "image": "C:\\fakepath\\31744-3-coder-transparent-image.png"
-    },
-    {
-      "genre": "amaaan",
-      "description": "amaanaaaa",
-      "image": "C:\\fakepath\\ny.jpg",
-      "id": 5
+      "genre": "Course",
+      "description": "Jeu de course description",
+      "image": "../../assets/images/course.jpg"
     }
   ],
   "Jeux": [
@@ -37,6 +25,7 @@
       "description": "Dans League of Legends, le joueur contrôle un champion aux compétences uniques dont la puissance augmente au fil de la partie se battant contre une équipe de joueurs en temps réel la plupart du temps.",
       "prix": "100.0",
       "genre_id": "Aventure",
+      "couverture": "../../assets/images/LOL.png",
       "id": 1
     },
     {
@@ -44,36 +33,30 @@
       "description": "FIFA 21 sur PS4 est une simulation de football éditée par Electronic Arts. Comme chaque année, le jeu promet des améliorations techniques pour toujours plus de réalisme ainsi que des animations et des comportements toujours plus poussés",
       "prix": "500.0",
       "genre_id": "Sport",
+      "couverture": "../../assets/images/fifa 2021.jpg",
       "id": 2
     },
     {
-      "id": 3,
-      "nom": "test",
-      "description": "testtttt",
-      "prix": "100",
-      "genre_id": "test"
-    },
-    {
-      "nom": "aaaa",
-      "description": "aaaaaaaaaaa",
-      "prix": "44",
-      "couverture": "C:\\fakepath\\la.jpg",
-      "genre_id": "Sport",
-      "id": 4
+      "id": 4,
+      "nom": "NFS Rivals",
+      "description": "Need for Speed: Rivals est un jeu vidéo de course de la série Need for Speed développé par le studio suédois Ghost Games en association avec Criterion Games, et édité par Electronic Arts. Il s'agit du vingtième opus de la franchise",
+      "prix": "70",
+      "couverture": "../../assets/images/NFS.jpg",
+      "genre_id": "Course"
     }
   ],
   "commentaires": [
-    {
-      "evaluation": 9,
-      "id": 1,
-      "message": "Le meilleur graphisme",
-      "jeux_id": "Fifa 2021"
-    },
     {
       "evaluation": 10,
       "message": "Vraiment c'est une obsession ce jeu",
       "jeux_id": "League Of Legends",
       "id": 2
+    },
+    {
+      "evaluation": 9,
+      "message": "NFS rival est un jeu de course magnifique , J'adore vraiment",
+      "jeux_id": "NFS Rivals",
+      "id": 3
     }
   ]
 }
