@@ -15,7 +15,7 @@ export class GenreComponent implements OnInit {
   g: Genre = new Genre();
   imageSrc: string;
   i: any;
-  url = "assets/images/";
+  url = "../../assets/images/";
   constructor(private gs: GenreService , private router: Router ,private sanitizer: DomSanitizer) {
        
    }

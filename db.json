@@ -23,6 +23,12 @@
       "genre": "test",
       "description": "Test",
       "image": "C:\\fakepath\\31744-3-coder-transparent-image.png"
+    },
+    {
+      "genre": "amaaan",
+      "description": "amaanaaaa",
+      "image": "C:\\fakepath\\ny.jpg",
+      "id": 5
     }
   ],
   "Jeux": [
@@ -46,6 +52,14 @@
       "description": "testtttt",
       "prix": "100",
       "genre_id": "test"
+    },
+    {
+      "nom": "aaaa",
+      "description": "aaaaaaaaaaa",
+      "prix": "44",
+      "couverture": "C:\\fakepath\\la.jpg",
+      "genre_id": "Sport",
+      "id": 4
     }
   ],
   "commentaires": [

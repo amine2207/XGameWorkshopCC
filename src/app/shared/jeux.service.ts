@@ -1,13 +1,14 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Jeux } from '../model/jeux';
 @Injectable({
   providedIn: 'root'
 })
 export class JeuxService {
 
- 
+  profileImageUpdate$ = new Subject<string>();
+
   jeuxUrl = "http://localhost:3000/Jeux";
   httpOptions = {
     headers: new HttpHeaders({

@@ -16,7 +16,7 @@ export class AddJeuComponent implements OnInit {
   jeux_group: FormGroup;
   jeux: Jeux = new Jeux();
   listgenres: Genre[] = [];
-
+  img;
   constructor(private js: JeuxService, private router: Router , private gs : GenreService) {
     this.jeux_group = new FormGroup({
     id: new FormControl('', Validators.required),
@@ -35,6 +35,9 @@ export class AddJeuComponent implements OnInit {
         console.log(err);
     }
     );
+
+    this.js.profileImageUpdate$.subscribe((img) => this.img = img);
+
   }
   get id() { return this.jeux_group.get('id'); }
   get nom() { return this.jeux_group.get('nom'); }
@@ -53,4 +56,23 @@ export class AddJeuComponent implements OnInit {
       });
   }
 
+  onSelectedFile(event)
+  {
+    if (event.target.files.length > 0)
+    {
+      const file = event.target.files[0];
+      this.jeux_group.get('couverture').setValue(file);
+      }
+  }
+
+  DisplayImgSubject()
+  {
+    this.js.getJeu()
+   .pipe()
+  .subscribe(
+    userData => {
+      this.img = this.jeux.couverture ;
+      this.js.profileImageUpdate$.next(this.img);
+    });
+  }
 }

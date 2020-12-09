@@ -66,6 +66,12 @@
                 </div>
             </div>
         </div>
+       <!-- <div class="form-group">
+            <label class="col-form-label col-form-label-lg" for="inputLarge">Image</label>
+
+            <input type="file" class="form-control form-control-lg" formControlName="couverture" name="couverture"
+                [(ngModel)]="jeux.couverture" />
+        </div>-->
 
         <label class="col-form-label col-form-label-lg" for="inputLarge">Type du Jeu:</label>
         <select id="genre_id"  name="genre_id" [(ngModel)]="jeux.genre_id" 
@@ -76,7 +82,7 @@
             </option>
         </select>
         <br>
-        <button [disabled]="jeux_group.invalid" (click)="add_jeu()" class="btn btn-outline-info btn-lg btn-block">Sauvegarder</button>
+        <button  (click)="add_jeu()" class="btn btn-outline-info btn-lg btn-block">Sauvegarder</button>
     </form>
 </body>
 
